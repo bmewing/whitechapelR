@@ -21,7 +21,7 @@ show_board(paths = NULL, hideouts = NULL, roads, alley, node_locations)
 plotted igraph object
 }
 \description{
-Show a graph representation of the game board with nodes placed in the appropriate relative spot, colored by the number of paths which include a paticular node. Possible hideouts are marked with blue squares.
+Show a graph representation of the game board with nodes placed in the appropriate relative spot, colored by the number of paths which include a particular node. Possible hideouts are marked with blue squares.
 }
 \details{
 roads, alley and node_locations are all bundled with the package (e.g. \code{data(roads)}).

@@ -3,7 +3,7 @@
 show_board = function(paths=NULL,hideouts=NULL,roads,alley,node_locations){
   #' @title Display game board representation
   #'
-  #' @description Show a graph representation of the game board with nodes placed in the appropriate relative spot, colored by the number of paths which include a paticular node. Possible hideouts are marked with blue squares.
+  #' @description Show a graph representation of the game board with nodes placed in the appropriate relative spot, colored by the number of paths which include a particular node. Possible hideouts are marked with blue squares.
   #'
   #' @param paths optional list of all possible paths already traveled
   #' @param hideouts optional vector of possible hideouts from previous rounds.
