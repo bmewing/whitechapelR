@@ -1,0 +1,7 @@
+export(end_round)
+export(inspect_space)
+export(show_board)
+export(start_round)
+export(take_a_carriage)
+export(take_a_step)
+importFrom("graphics", "par", "plot")
