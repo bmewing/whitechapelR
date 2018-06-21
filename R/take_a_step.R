@@ -28,7 +28,7 @@ take_a_carriage = function(paths){
   #' @param paths list of all possible paths already traveled
   #'
   #' @return list of all possible paths traveled by Jack
-  data(roads)
+  data(roads,envir = environment())
   paths = take_a_step(paths,roads)
   paths = take_a_step(paths,roads)
   return(paths)
