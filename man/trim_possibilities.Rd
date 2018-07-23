@@ -9,7 +9,7 @@ trim_possibilities(paths, node)
 \arguments{
 \item{paths}{list of all possible paths already traveled}
 
-\item{node}{vector of length 1 or 2 which specifies blocked nodes due to the presence of a policeman}
+\item{node}{list of vectors of length 1 or 2 which specifies blocked nodes due to the presence of a policeman}
 }
 \value{
 list of trimmed possible paths traveled by Jack

@@ -15,8 +15,10 @@ take_a_step = function(paths,roads,blocked = NULL){
   #' The non-directional edge pairs are available via \code{data(roads)} or \code{data(alley)}
   #' This function does not account for the rule that Jack cannot travel through a road occupied by a police officer.
 
-  paths = lapply(paths,gen_possibilities,roads=roads,blocked)
-  return(unlist(paths,recursive = FALSE))
+  paths = lapply(paths,gen_possibilities,roads=roads,blocked=blocked)
+  paths = unlist(paths,recursive = FALSE)
+
+  return(paths)
 }
 
 #' @export
@@ -43,10 +45,10 @@ trim_possibilities = function(paths,node){
   #' @description Remove known impossible end points for Jack, typically as a result of having found, but not arrested Jack.
   #'
   #' @param paths list of all possible paths already traveled
-  #' @param node vector of length 1 or 2 which specifies blocked nodes due to the presence of a policeman
+  #' @param node list of vectors of length 1 or 2 which specifies blocked nodes due to the presence of a policeman
   #'
   #' @return list of trimmed possible paths traveled by Jack
-  keep = lapply(paths,function(x){sort(rev(x)[seq_along(node)]) != sort(node)})
+  keep = unlist(lapply(paths,function(x){!identical(sort(rev(x)[seq_along(node)]),sort(node))}))
   return(paths[keep])
 }
 
@@ -55,8 +57,11 @@ gen_possibilities = function(path,roads,blocked = NULL){
   p = unique(unlist(roads[roads$x == start | roads$y == start,]))
   p = p[p != start]
   full_paths = lapply(p,add_possibilities,path=path)
-  paths = if(!is.null(blocked)) lapply(blocked,trim_possibilities,paths=full_paths) else full_paths
-  return(paths)
+  if(!is.null(blocked)){
+    r = lapply(blocked,trim_possibilities,paths=full_paths)
+    full_paths = Reduce(intersect,r,init=r[[1]])
+  }
+  return(full_paths)
 }
 
 add_possibilities = function(p,path){

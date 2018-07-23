@@ -1,6 +1,6 @@
 Package: whitechapelR
 Title: Advanced Policing Techniques for the Board Game "Letters from Whitechapel"
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person("Mark", "Ewing", email = "b.mark@ewingsonline.com", role = c("aut", "cre"))
 Description: Provides a set of functions to make tracking the hidden movements 
   of the 'Jack' player easier. By tracking every possible path Jack might have 
@@ -14,7 +14,8 @@ Encoding: UTF-8
 LazyData: true
 Imports:
   plyr,
-  igraph
+  igraph,
+  purrr
 Suggests:
   covr,
   testthat
