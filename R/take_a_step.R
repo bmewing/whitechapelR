@@ -1,4 +1,4 @@
-#' @export
+globalVariables(c("roads"))
 
 take_a_step = function(paths,roads,blocked = NULL){
   #' @title Track one movement
@@ -21,8 +21,6 @@ take_a_step = function(paths,roads,blocked = NULL){
   return(paths)
 }
 
-#' @export
-
 take_a_carriage = function(paths){
   #' @title Track carriage movement
   #'
@@ -36,8 +34,6 @@ take_a_carriage = function(paths){
   paths = take_a_step(paths,roads)
   return(paths)
 }
-
-#' @export
 
 trim_possibilities = function(paths,node){
   #' @title Trim possible paths

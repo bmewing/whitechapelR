@@ -8,8 +8,8 @@ Description: Provides a set of functions to make tracking the hidden movements
   as through alleyways and via carriages, the police can more accurately narrow 
   the field of their search. Additionally, by tracking all possible hideouts from 
   round to round, rounds 3 and 4 should have a vastly reduced field of search.
-Depends: R (>= 3.3.2)
-License: Unlimited
+Depends: R (>= 3.3)
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
