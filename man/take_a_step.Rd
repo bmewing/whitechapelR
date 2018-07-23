@@ -4,12 +4,14 @@
 \alias{take_a_step}
 \title{Track one movement}
 \usage{
-take_a_step(paths, roads)
+take_a_step(paths, roads, blocked = NULL)
 }
 \arguments{
 \item{paths}{list of all possible paths already traveled}
 
 \item{roads}{data.frame of non-directional edge pairs for either the road graph or the alley graph}
+
+\item{blocked}{list of node pairs which cannot be traversed because a police officer blocks it (should not be used for special movement)}
 }
 \value{
 list of all possible paths traveled by Jack
