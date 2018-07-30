@@ -17,3 +17,8 @@ list of trimmed possible paths traveled by Jack
 \description{
 Remove known impossible end points for Jack, typically as a result of having found, but not arrested Jack.
 }
+\examples{
+possibilities = start_round(64)
+possibilities = take_a_carriage(possibilities)
+possibilities = trim_possibilities(possibilities,list(82))
+}

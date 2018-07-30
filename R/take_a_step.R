@@ -14,6 +14,12 @@ take_a_step = function(paths,roads,blocked = NULL){
   #' @details
   #' The non-directional edge pairs are available via \code{data(roads)} or \code{data(alley)}
   #' This function does not account for the rule that Jack cannot travel through a road occupied by a police officer.
+  #'
+  #' @examples
+  #' possibilities = start_round(64)
+  #' possibilities = take_a_step(possibilities,roads)
+  #' possibilities = take_a_step(possibilities,roads,blocked=list(c(63,82),c(63,65)))
+  #' possibilities = take_a_step(possibilities,alley)
 
   paths = lapply(paths,gen_possibilities,roads=roads,blocked=blocked)
   paths = unlist(paths,recursive = FALSE)
@@ -29,6 +35,10 @@ take_a_carriage = function(paths){
   #' @param paths list of all possible paths already traveled
   #'
   #' @return list of all possible paths traveled by Jack
+  #' @examples
+  #' possibilities = start_round(64)
+  #' possibilities = take_a_carriage(possibilities)
+
   data(roads,envir = environment())
   paths = take_a_step(paths,roads)
   paths = take_a_step(paths,roads)
@@ -44,6 +54,10 @@ trim_possibilities = function(paths,node){
   #' @param node list of vectors of length 1 or 2 which specifies blocked nodes due to the presence of a policeman
   #'
   #' @return list of trimmed possible paths traveled by Jack
+  #' @examples
+  #' possibilities = start_round(64)
+  #' possibilities = take_a_carriage(possibilities)
+  #' possibilities = trim_possibilities(possibilities,list(82))
   keep = unlist(lapply(paths,function(x){!identical(sort(rev(x)[seq_along(node)]),sort(node))}))
   return(paths[keep])
 }

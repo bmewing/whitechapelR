@@ -23,3 +23,9 @@ Track one step of unknown movement by Jack, either on roads or through alleyways
 The non-directional edge pairs are available via \code{data(roads)} or \code{data(alley)}
 This function does not account for the rule that Jack cannot travel through a road occupied by a police officer.
 }
+\examples{
+possibilities = start_round(64)
+possibilities = take_a_step(possibilities,roads)
+possibilities = take_a_step(possibilities,roads,blocked=list(c(63,82),c(63,65)))
+possibilities = take_a_step(possibilities,alley)
+}

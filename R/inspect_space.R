@@ -10,6 +10,12 @@ inspect_space = function(paths,space,clue){
   #' @param clue single logical value indicating if evidence of Jack was found
   #'
   #' @return list of all possible paths traveled by Jack
+  #' @examples
+  #' possibilities = start_round(64)
+  #' possibilities = take_a_step(possibilities,roads)
+  #' possibilities = take_a_step(possibilities,roads,blocked=list(c(63,82),c(63,65)))
+  #' possibilities = inspect_space(possibilities,space = c(29,30), clue = FALSE)
+  #' possibilities = inspect_space(possibilities,space = 49, clue = TRUE)
 
   if(clue){
     paths = lapply(paths,found_clue,space=space)

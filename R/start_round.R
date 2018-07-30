@@ -8,6 +8,9 @@ start_round = function(initial_murder){
   #' @param initial_murder integer Space of the initial murder(s)
   #'
   #' @return list with the initial murder location(s) as the starting point(s)
+  #' @examples
+  #' possibilities = start_round(64)
+  #' possibilities = start_round(128)
 
   l = list()
   l[[1]] = initial_murder[1]

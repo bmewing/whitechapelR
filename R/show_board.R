@@ -16,6 +16,13 @@ show_board = function(paths=NULL,hideouts=NULL,roads,alley,node_locations){
   #' @details
   #' roads, alley and node_locations are all bundled with the package (e.g. \code{data(roads)}).
   #' Solid lines in the graph represent road connections between nodes. Dashed lines represent alley way connections.
+  #'
+  #' @examples
+  #' possibilities = start_round(64)
+  #' possibilities = take_a_step(possibilities,roads)
+  #' possibilities = take_a_step(possibilities,roads,blocked=list(c(63,82),c(63,65)))
+  #' possibilities = take_a_step(possibilities,alley)
+  #' show_board(paths=possibilities,hideouts=NULL,roads,alley,node_locations)
 
   r = roads
   a = alley

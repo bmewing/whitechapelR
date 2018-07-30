@@ -15,3 +15,7 @@ list with the initial murder location(s) as the starting point(s)
 \description{
 Generate the initial list for a new round
 }
+\examples{
+possibilities = start_round(64)
+possibilities = start_round(128)
+}

@@ -15,3 +15,7 @@ list of all possible paths traveled by Jack
 \description{
 Track two steps of unknown movement by Jack, on roads
 }
+\examples{
+possibilities = start_round(64)
+possibilities = take_a_carriage(possibilities)
+}
