@@ -51,13 +51,14 @@ trim_possibilities = function(paths,node){
   #' @description Remove known impossible end points for Jack, typically as a result of having found, but not arrested Jack.
   #'
   #' @param paths list of all possible paths already traveled
-  #' @param node list of vectors of length 1 or 2 which specifies blocked nodes due to the presence of a policeman
+  #' @param node vector of length 1 or 2 which specifies blocked nodes due to the presence of a policeman
   #'
   #' @return list of trimmed possible paths traveled by Jack
   #' @examples
   #' possibilities = start_round(64)
   #' possibilities = take_a_carriage(possibilities)
-  #' possibilities = trim_possibilities(possibilities,list(82))
+  #' possibilities = trim_possibilities(possibilities,82)
+  #' possibilities = trim_possibilities(possibilities,c(66,67))
   keep = unlist(lapply(paths,function(x){!identical(sort(rev(x)[seq_along(node)]),sort(node))}))
   return(paths[keep])
 }

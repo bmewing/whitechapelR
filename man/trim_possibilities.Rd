@@ -9,7 +9,7 @@ trim_possibilities(paths, node)
 \arguments{
 \item{paths}{list of all possible paths already traveled}
 
-\item{node}{list of vectors of length 1 or 2 which specifies blocked nodes due to the presence of a policeman}
+\item{node}{vector of length 1 or 2 which specifies blocked nodes due to the presence of a policeman}
 }
 \value{
 list of trimmed possible paths traveled by Jack
@@ -20,5 +20,6 @@ Remove known impossible end points for Jack, typically as a result of having fou
 \examples{
 possibilities = start_round(64)
 possibilities = take_a_carriage(possibilities)
-possibilities = trim_possibilities(possibilities,list(82))
+possibilities = trim_possibilities(possibilities,82)
+possibilities = trim_possibilities(possibilities,c(66,67))
 }
