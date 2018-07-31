@@ -46,7 +46,7 @@ show_board = function(paths=NULL,hideouts=NULL,roads,alley,node_locations){
   }
 
   if(!is.null(hideouts)){
-    v$shapes[hideouts] = "square"
+    v$shape[hideouts] = "square"
     v$color[hideouts] = "sky blue"
   }
 

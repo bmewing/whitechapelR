@@ -10,6 +10,7 @@ test_that("returns list",{
 context("Take a step")
 data(roads)
 data(alley)
+data(node_locations)
 
 test_that("steps are correct",{
   expect_identical(take_a_step(list(84),roads),                          list(c(84, 51)
@@ -71,4 +72,11 @@ context("End of Round")
 test_that("Hideouts correct",{
   expect_identical(end_round(take_a_step(list(1),alley)),c(7,26))
   expect_identical(end_round(take_a_step(list(1),alley),c(26,45)),c(26))
+})
+
+context("Visuals")
+
+test_that("Expect plot generates without errors",{
+  expect_null(show_board(list(69),c(45,46),roads,alley,node_locations))
+  expect_null(show_board(list(69),NULL,roads,alley,node_locations))
 })
