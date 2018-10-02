@@ -42,6 +42,7 @@ take_a_carriage = function(paths){
   data(roads,envir = environment())
   paths = take_a_step(paths,roads)
   paths = take_a_step(paths,roads)
+  paths = Filter(function(x){rx = rev(x); rx[1] != rx[3]}, paths)
   return(paths)
 }
 

@@ -53,7 +53,7 @@ Additionally, you may specify via a list of blocked nodes where Jack cannot move
 # paths = take_a_step(paths,roads,list(c(50,31),c(30,13)))
 ```
 
-Taking a carriage can only be over roads and is never blocked by policemen so it is a simple wrapper for taking two steps. Note, technically the carriage cannot move back to the space from which it originated, but that's not accounted for in v0.2
+Taking a carriage can only be over roads and is never blocked by policemen so it is a simple wrapper for taking two steps with the added functionality of following the rule where Jack cannot end his movement on the space where he began it.
 
 ```r
 # paths = take_a_carriage(paths)
