@@ -1,4 +1,4 @@
-# whitechapelR 0.3
+# whitechapelR 0.3.0
 
 * Fixed a rules bug with carriage movement, now it cannot end on the space where it started
 
@@ -10,6 +10,6 @@
 
 * Added examples to every function.
 
-# whitechapelR 0.2
+# whitechapelR 0.2.0
 
 * Initial release to CRAN
