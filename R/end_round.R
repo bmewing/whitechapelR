@@ -20,10 +20,10 @@ end_round = function(paths,hideouts=NULL){
   #' possibilities = take_a_step(possibilities,roads)
   #' hideouts = end_round(possibilities,hideouts=hideouts)
 
-  possible_hideouts = lapply(paths,function(x){
-    rev(x)[1]
-  })
-  possible_hideouts = unique(unlist(possible_hideouts))
+  possible_hideouts = vapply(paths, function(x){
+    x[length(x)]
+  }, numeric(1))
+  possible_hideouts = unique(possible_hideouts)
   if(is.null(hideouts)) return(sort(possible_hideouts))
   hideouts = intersect(hideouts,possible_hideouts)
   return(sort(hideouts))
